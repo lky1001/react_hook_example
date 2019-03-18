@@ -26,6 +26,9 @@ function Example() {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`
     console.log('count changed')
+    return () => {
+      console.log('clean up?')
+    }
   }, [count])
 
   return (
