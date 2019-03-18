@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
 function useFriendStatus(friendId) {
   const [isOnline, setIsOnline] = useState(null)
@@ -8,7 +8,7 @@ function useFriendStatus(friendId) {
   }
 
   useEffect(() => () => {
-    console.log("useEffect")
+    console.log('useEffect')
     handleStatusChange(true)
   })
 
@@ -25,15 +25,16 @@ function Example() {
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`
-    console.log("count changed")
+    console.log('count changed')
   }, [count])
 
   return (
     <div>
       <p>You clicked {count} times</p>
       <p>You state clicked {state} times</p>
-      <p>You friend is {isOnline ? "online" : "offline"}</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <p>You friend is {isOnline ? 'online' : 'offline'}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
       <button onClick={() => setState(state + 1)}>State Click me</button>
     </div>
   )
